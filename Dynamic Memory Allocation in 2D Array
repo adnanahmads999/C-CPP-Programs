@@ -35,6 +35,14 @@ int main()
         }
         cout<<endl;
     }
+    
+    //Now since we have to release memory manually in Dynamic allocation, so we'll do it in following way.
+    for(int i=0; i<row; i++)
+    {
+        delete [] arr[i];  //all columns will be deleted
+    }
+    delete []arr;  //all rows removed and memory is free now
+    
 
     return 0;
 }
