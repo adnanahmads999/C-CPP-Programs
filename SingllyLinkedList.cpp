@@ -75,7 +75,7 @@ void insertAtPosition(Node* &head, Node* &tail, int d, int pos)
     
 }
 
-void deleteNode(Node* &head, int pos)
+void deleteNode(Node* &head, int pos, Node* &tail)
 {
     
     if(pos==1)
@@ -156,7 +156,7 @@ int main()
     
     // cout<<head->data<<endl;
     // cout<<tail->data<<endl;
-    deleteNode(head, 3);
+    deleteNode(head, 3, tail);
     print(head);
 
     return 0;
