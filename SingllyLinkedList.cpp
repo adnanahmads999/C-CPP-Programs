@@ -98,8 +98,20 @@ void deleteNode(Node* &head, int pos)
             curr=curr->next;
             cnt++;
         }
-        prev->next=curr->next;
-        delete curr;
+        if(curr->next==NULL)
+        {
+            prev->next= curr->next;
+            tail=prev;
+            delete curr;
+        }
+        else
+        {
+            prev->next=curr->next;
+            delete curr;
+        }
+        //code without updating tail 
+        // prev->next=curr->next;
+        // delete curr;
     }
 }
 
