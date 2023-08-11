@@ -68,6 +68,35 @@ void levelOrderTraversal(node* root)
     }
 }
 
+void inorder(node* root)
+{
+    //base case
+    if(root==NULL)
+    return;
+    
+    inorder(root->left); //L
+    cout<<root->data<<" "; //N
+    inorder(root->right); //R
+}
+
+void preorder(node* root)
+{
+    if(root== NULL) return;
+    
+    cout<<root->data<<" "; //N
+    preorder(root->left); //L
+    preorder(root->right); //R
+}
+
+void postorder(node* root)
+{
+    if(root==NULL) return;
+    
+    postorder(root->left);
+    postorder(root->right);
+    cout<<root->data<<" ";
+}
+
 int main()
 {
     node* root=NULL;
@@ -76,6 +105,15 @@ int main()
     root= buildTree(root);
     levelOrderTraversal(root);
     //1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1
+    
+    cout<<"\nInorder Traversal is: ";
+    inorder(root);
+    
+    cout<<"\nPreorder Traversal is: ";
+    preorder(root);
+    
+    cout<<"\nPostorder Traversal is: ";
+    postorder(root);
 
     return 0;
 }
